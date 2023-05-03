@@ -57,9 +57,10 @@
     <td>{{ $contact->description }}</td>
     <td>{{ $contact->created_at }}</td>
     <td>
-            {{-- <a href="javascript:;" class="btn btn-sm bg-success-light me-2"><i class="feather-eye"></i></a> --}}
+            <a class="btn btn-sm bg-warning-light me-2" data-bs-toggle="modal" data-bs-target="#DeleteContact{{ $contact->id }}"><i class="fa fa-trash"></i></a>
     </td>
     </tr>
+    @include('admin.contacts.delete')
     @endforeach
     </tbody>
     </table>

@@ -12,7 +12,7 @@
                <li><a href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a></li>
                <li><a href="{{ route('admin.logout') }}">Log out</a></li>
             @else
-               <li><a href="{{ route('login') }}">Log in</a></li>
+               <li><a href="{{ route('admin.login') }}">Log in</a></li>
             @endauth
         @endif
         <li>

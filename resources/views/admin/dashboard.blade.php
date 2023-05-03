@@ -27,7 +27,7 @@
                 <div class="db-widgets d-flex justify-content-between align-items-center">
                     <div class="db-info">
                         <h6>Teachers</h6>
-                        <h3>50055</h3>
+                        <h3>{{ $teachers->count() }}</h3>
                     </div>
                     <div class="db-icon">
                         <img src="{{ URL::asset('admin_dashboard/assets/img/icons/dash-icon-01.svg') }}" alt="Dashboard Icon">
