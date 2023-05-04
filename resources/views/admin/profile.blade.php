@@ -25,6 +25,7 @@
             <div class="col-auto profile-image">
               <img class="rounded-circle" alt="User Image" src="{{ (!empty($profileData->photo)) ? url('admin_dashboard/assets/img/profiles/'.$profileData->photo) : url('admin_dashboard/assets/img/profiles/avatar-03.jpg') }}">
             </div>
+
             <div class="col ms-md-n2 profile-user-info">
               <h4 class="user-name mb-0">{{ $profileData->name }}</h4>
               <h6 class="text-muted">{{ $profileData->email }}</h6>
@@ -47,6 +48,15 @@
             <form method="post" action="{{ route('admin.profile.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <img class="img-thumbnail image-preview"  src="{{ (!empty($profileData->photo)) ? url('admin_dashboard/assets/img/profiles/'.$profileData->photo) : url('admin_dashboard/assets/img/profiles/avatar-03.jpg') }}" alt="Admin profile picture" id="showImage">
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <input type="file" name="photo" id="image">
+                </div>
+
             <div class="col-md-4 mb-3">
                 <label>Name</label>
                 <input type="text" class="form-control" value="{{ $profileData->name }}" placeholder="Name" name="name" required>
@@ -59,13 +69,7 @@
                 <label>Phone</label>
                 <input type="text" class="form-control" value="{{ $profileData->phone }}" placeholder="Phone" name="phone" required>
             </div>
-            <div class="col-md-12 mb-3">
-                <label>Phone</label>
-                <input type="file" name="photo" id="image">
-            </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <img class="img-thumbnail image-preview"  src="{{ (!empty($profileData->photo)) ? url('admin_dashboard/assets/img/profiles/'.$profileData->photo) : url('admin_dashboard/assets/img/profiles/avatar-03.jpg') }}" alt="Admin profile picture" id="showImage">
+
             </div>
             <div class="box-footer" style="text-align:center">
                 <button type="submit" class="btn btn-primary">Submit</button>

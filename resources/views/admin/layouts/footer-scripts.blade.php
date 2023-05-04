@@ -2,7 +2,6 @@
 <script src="{{ URL::asset('admin_dashboard/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ URL::asset('admin_dashboard/assets/js/feather.min.js')}}"></script>
 <script src="{{ URL::asset('admin_dashboard/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
-
 <script src="{{ URL::asset('admin_dashboard/assets/plugins/apexchart/apexcharts.min.js') }}"></script>
 <script src="{{ URL::asset('admin_dashboard/assets/plugins/apexchart/chart-data.js') }}"></script>
 <script src="{{ URL::asset('admin_dashboard/assets/js/moment.min.js') }}"></script>
