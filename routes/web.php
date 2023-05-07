@@ -54,7 +54,7 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
     Route::resource('/teachers', TeacherController::class);
     Route::resource('/subjects', SubjectController::class);
     Route::get('/academicyear/{id}', [SubjectController::class, 'getbranches']);
-    Route::resource('/n_groupes', N_groupeController::class);
+    Route::resource('/groupes', N_groupeController::class);
     Route::get('/section/{id}', [N_groupeController::class, 'getgroupes']);
     Route::resource('/rooms', RoomController::class);
 });

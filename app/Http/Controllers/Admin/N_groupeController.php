@@ -12,16 +12,16 @@ class N_groupeController extends Controller
 {
     public function index()
     {
-        $groupes = N_groupeController::all();
+        $n_groupes = N_groupeController::all();
 
-        return view('admin.groupes.index', compact('groupes'));
+        return view('admin.groupes.index', compact('n_groupes'));
     }
 
     public function create()
     {
         $sections = Section::all();
-        $groupes = Groupe::all();
-        return view('admin.groupes.create', compact('sections','groupes'));
+        $n_groupes = Groupe::all();
+        return view('admin.groupes.create', compact('sections','n_groupes'));
     }
 
     public function store(Request $request)
