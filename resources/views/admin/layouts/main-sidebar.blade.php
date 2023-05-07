@@ -28,7 +28,14 @@
                         <li><a href="{{route('rooms.create')}}">Room Add</a></li>
                     </ul>
                 </li>
-
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-hotel"></i> <span> Groupes </span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{{route('groupes.index')}}">Groupe List</a></li>
+                        <li><a href="{{route('groupes.create')}}">Groupe Add</a></li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="#"><i class="fas fa-calendar-day"></i> <span>Time Table </span></a>

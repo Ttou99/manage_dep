@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\N_groupeController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
@@ -53,6 +54,8 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
     Route::resource('/teachers', TeacherController::class);
     Route::resource('/subjects', SubjectController::class);
     Route::get('/academicyear/{id}', [SubjectController::class, 'getbranches']);
+    Route::resource('/n_groupes', N_groupeController::class);
+    Route::get('/section/{id}', [N_groupeController::class, 'getgroupes']);
     Route::resource('/rooms', RoomController::class);
 });
 
