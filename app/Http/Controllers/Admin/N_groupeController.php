@@ -12,7 +12,7 @@ class N_groupeController extends Controller
 {
     public function index()
     {
-        $n_groupes = N_groupeController::all();
+        $n_groupes = N_groupe::all();
 
         return view('admin.groupes.index', compact('n_groupes'));
     }
@@ -20,8 +20,8 @@ class N_groupeController extends Controller
     public function create()
     {
         $sections = Section::all();
-        $n_groupes = Groupe::all();
-        return view('admin.groupes.create', compact('sections','n_groupes'));
+        $groupes = Groupe::all();
+        return view('admin.groupes.create', compact('sections','groupes'));
     }
 
     public function store(Request $request)
@@ -29,7 +29,7 @@ class N_groupeController extends Controller
 
         try {
 
-            $n_groupe = new N_groupeController();
+            $n_groupe = new N_groupe();
             $n_groupe->name_n_groupe = $request->name_n_groupe;
             $n_groupe->sous_groupe = $request->sous_groupe;
             $n_groupe->section_id = $request->section_id;
@@ -51,7 +51,7 @@ class N_groupeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(N_groupeController $n_groupe)
+    public function show(N_groupe $n_groupe)
     {
         //
     }
@@ -63,7 +63,7 @@ class N_groupeController extends Controller
     {
         $sections = Section::all();
         $groupes = Groupe::all();
-        $n_groupes =  N_groupeController::findOrFail($id);
+        $n_groupes =  N_groupe::findOrFail($id);
         return view('admin.groupes.edit', compact('sections','groupes','n_groupes'));
 
     }
@@ -74,7 +74,7 @@ class N_groupeController extends Controller
     public function update(Request $request)
     {
         try{
-            $n_groupe = N_groupeController::findorfail($request->id);
+            $n_groupe = N_groupe::findorfail($request->id);
             $n_groupe->name_n_groupe = $request->name_n_groupe;
             $n_groupe->sous_groupe = $request->sous_groupe;
             $n_groupe->section_id = $request->section_id;
@@ -91,7 +91,7 @@ class N_groupeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(N_groupeController $n_groupe)
+    public function destroy(N_groupe $n_groupe)
     {
         try {
             $n_groupe->delete();
@@ -106,7 +106,7 @@ class N_groupeController extends Controller
 
     public function getgroupes($id)
     {
-        $list_groupes = Groupe::where("Section_id", $id)->pluck("name_groupe", "id");
+        $list_groupes = Groupe::where("section_id", $id)->pluck("name_groupe", "id");
         return $list_groupes;
     }
 }

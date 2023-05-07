@@ -50,7 +50,7 @@
                                 <th>Section</th>
                                 <th>Groupe </th>
                                 <th>Sous Groupe </th>
-                                <th>No groupe </th>
+                                <th>No Groupe </th>
                                 <th class="text-end">Action</th>
                             </tr>
                             </thead>
@@ -67,7 +67,7 @@
                                         @else Sous Groupe 02
                                         @endif
                                     </td>
-                                    <td>{{ $groupe->name_n_groupe }}</td>
+                                    <td>{{ $n_groupe->name_n_groupe }}</td>
                                     <td class="text-end">
                                         <div class="actions">
                                             <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
@@ -93,7 +93,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
