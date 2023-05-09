@@ -50,7 +50,6 @@
                                 <th>Section</th>
                                 <th>Groupe </th>
                                 <th>Sous Groupe </th>
-                                <th>No Groupe </th>
                                 <th class="text-end">Action</th>
                             </tr>
                             </thead>
@@ -61,13 +60,12 @@
                                         <?php $i++; ?>
                                     <td>{{ $i }}</td>
                                     <td>{{ $n_groupe->section->name }}</td>
-                                    <td>{{ $n_groupe->groupe->name_groupe }}</td>
+                                    <td>{{ $n_groupe->name_n_groupe }}</td>
                                     <td>
                                         @if($n_groupe->sous_groupe == 0) Sous Groupe 01
                                         @else Sous Groupe 02
                                         @endif
                                     </td>
-                                    <td>{{ $n_groupe->name_n_groupe }}</td>
                                     <td class="text-end">
                                         <div class="actions">
                                             <a href="javascript:;" class="btn btn-sm bg-success-light me-2">

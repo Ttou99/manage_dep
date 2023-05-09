@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name_n_groupe');
             $table->integer('sous_groupe')->default(0);
             $table->foreignId('section_id')->constrained('sections')->cascadeOnDelete();
-            $table->foreignId('groupe_id')->constrained('groupes')->cascadeOnDelete();
+
+
+
             $table->timestamps();
 
         });

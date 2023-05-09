@@ -56,7 +56,21 @@
             <div class="card-body">
                 <div class="db-widgets d-flex justify-content-between align-items-center">
                     <div class="db-info">
-                        <h6>Department</h6>
+                        <h6>Rooms</h6>
+                        <h3>30+</h3>
+                    </div>
+                    <div class="db-icon">
+                        <img src="{{ URL::asset('admin_dashboard/assets/img/icons/dash-icon-03.svg')}}" alt="Dashboard Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><div class="col-xl-3 col-sm-6 col-12 d-flex">
+        <div class="card bg-comman w-100">
+            <div class="card-body">
+                <div class="db-widgets d-flex justify-content-between align-items-center">
+                    <div class="db-info">
+                        <h6>Groups</h6>
                         <h3>30+</h3>
                     </div>
                     <div class="db-icon">

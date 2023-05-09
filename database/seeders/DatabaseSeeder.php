@@ -27,6 +27,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AcademicyearTabelSeeder::class);
         $this->call(BranchTabelSeeder::class);
         $this->call(SubjectTabelSeeder::class);
+        $this->call(SectionTableSeeder::class);
+        $this->call(N_groupesTableSeeder::class);
+
         Setting::factory(1)->create();
         Contact::factory(20)->create();
     }

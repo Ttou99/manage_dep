@@ -56,12 +56,12 @@
         </div>
       </div>
       <div class="box footer-gallery">
-        <img src="imgs/gallery-01.png" alt="" />
-        <img src="imgs/gallery-02.png" alt="" />
-        <img src="imgs/gallery-03.jpg" alt="" />
-        <img src="imgs/gallery-04.png" alt="" />
-        <img src="imgs/gallery-05.jpg" alt="" />
-        <img src="imgs/gallery-06.png" alt="" />
+      <img src="{{ URL::asset('frontend/imgs/gallery-01.png') }} " />
+      <img src="{{ URL::asset('frontend/imgs/gallery-02.png') }} " />
+      <img src="{{ URL::asset('frontend/imgs/gallery-03.jpg') }} " />
+      <img src="{{ URL::asset('frontend/imgs/gallery-04.png') }} " />
+      <img src="{{ URL::asset('frontend/imgs/gallery-05.jpg') }} " />
+      <img src="{{ URL::asset('frontend/imgs/gallery-06.png') }} " />
       </div>
     </div>
     <p class="copyright">Copyright &copy; <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script> <a href="https://www.linkedin.com/in/attahir-korichi-927084236" target="_blanck">Korichi Attahir</a>. All rights reserved.</p>

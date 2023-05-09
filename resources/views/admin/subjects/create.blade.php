@@ -105,7 +105,7 @@
                 var academicyear_id = $(this).val();
                 if (academicyear_id) {
                     $.ajax({
-                        url: "{{ URL::to('academicyear') }}/" + academicyear_id,
+                        url: "{{ URL::to('admin/academicyear') }}/" + academicyear_id,
                         type: "GET",
                         dataType: "json",
                         success: function (data) {

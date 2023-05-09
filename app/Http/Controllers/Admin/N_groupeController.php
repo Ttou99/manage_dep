@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Groupe;
 use App\Models\Section;
 use App\Models\N_groupe;
 use Illuminate\Http\Request;
@@ -20,8 +19,7 @@ class N_groupeController extends Controller
     public function create()
     {
         $sections = Section::all();
-        $groupes = Groupe::all();
-        return view('admin.groupes.create', compact('sections','groupes'));
+        return view('admin.groupes.create', compact('sections'));
     }
 
     public function store(Request $request)
@@ -33,7 +31,6 @@ class N_groupeController extends Controller
             $n_groupe->name_n_groupe = $request->name_n_groupe;
             $n_groupe->sous_groupe = $request->sous_groupe;
             $n_groupe->section_id = $request->section_id;
-            $n_groupe->groupe_id = $request->groupe_id;
             $n_groupe->save();
 
             return redirect()->route('groupes.index');
@@ -62,9 +59,8 @@ class N_groupeController extends Controller
     public function edit($id)
     {
         $sections = Section::all();
-        $groupes = Groupe::all();
         $n_groupes =  N_groupe::findOrFail($id);
-        return view('admin.groupes.edit', compact('sections','groupes','n_groupes'));
+        return view('admin.groupes.edit', compact('sections','n_groupes'));
 
     }
 
@@ -78,7 +74,6 @@ class N_groupeController extends Controller
             $n_groupe->name_n_groupe = $request->name_n_groupe;
             $n_groupe->sous_groupe = $request->sous_groupe;
             $n_groupe->section_id = $request->section_id;
-            $n_groupe->groupe_id = $request->groupe_id;
             $n_groupe->save();
             return redirect()->route('groupes.index');
         }
@@ -106,7 +101,7 @@ class N_groupeController extends Controller
 
     public function getgroupes($id)
     {
-        $list_groupes = Groupe::where("section_id", $id)->pluck("name_groupe", "id");
+        $list_groupes = N_groupe::where("section_id", $id)->pluck("name_n_groupe", "id");
         return $list_groupes;
     }
 }

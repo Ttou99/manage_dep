@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Groupe Add
+    Group Add
 @stop
 
 @section('content')
@@ -56,12 +56,10 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="col-12 col-sm-6">
                                 <div class="form-group local-forms">
-                                    <label>Groupes <span class="login-danger">*</span></label>
-                                    <select id="groupe_id" name="groupe_id" class="form-control select">
-                                    </select>
+                                    <label>No Groupe <span class="login-danger">*</span></label>
+                                    <input type="text" name="name_n_groupe" class="form-control" placeholder="Enter No Of Groupe">
                                 </div>
                             </div>
 
@@ -75,12 +73,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="form-group local-forms">
-                                    <label>No Groupe <span class="login-danger">*</span></label>
-                                    <input type="text" name="name_n_groupe" class="form-control" placeholder="Enter No Of Groupe">
-                                </div>
-                            </div>
+
 
                             <div class="col-12">
                                 <div class="student-submit">
@@ -105,7 +98,7 @@
                 var section_id = $(this).val();
                 if (section_id) {
                     $.ajax({
-                        url: "{{ URL::to('section') }}/" + section_id,
+                        url: "{{ URL::to('admin/section') }}/" + section_id,
                         type: "GET",
                         dataType: "json",
                         success: function (data) {

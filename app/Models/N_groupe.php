@@ -11,17 +11,13 @@ class N_groupe extends Model
 
     protected $fillable = [
         'name_n_groupe',
-        'section_id',
-        'groupe_id',
         'sous_groupe',
+        'section_id',
     ];
-    protected $table = 'groupes';
+    protected $table = 'n_groupes';
     public $timestamps = true;
 
-    public function groupe()
-    {
-        return $this->belongsTo(Groupe::class);
-    }
+
 
     public function section()
     {
