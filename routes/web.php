@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Teacher\TeacherUserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,11 @@ Route::middleware('auth')->group(function () {
 
 
 
+Route::middleware(['auth','role:user'])->prefix('teacher')->group(function () {
+    Route::get('/dashboard', [TeacherUserController::class, 'TeacherDashboard'])->name('teacher.dashboard');
+    Route::get('/logout', [TeacherUserController::class, 'logout'])->name('teacher.logout');
+
+});
 
 Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
@@ -61,3 +68,5 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
 
 
 require __DIR__.'/auth.php';
+
+

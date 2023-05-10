@@ -24,7 +24,7 @@
             <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <span class="user-img">
                 <img class="rounded-circle" alt="User Image" src="{{ (!empty($profileData->photo)) ? url('admin_dashboard/assets/img/profiles/'.$profileData->photo) : url('admin_dashboard/assets/img/profiles/avatar-03.jpg') }}">
-                    
+
                     <div class="user-text">
                         <h6>{{ Auth::user()->name }}</h6>
                         <p class="text-muted mb-0">Administrator</p>
@@ -35,7 +35,7 @@
                 <div class="user-header">
                     <div class="avatar avatar-sm">
                     <img class="rounded-circle" alt="User Image" src="{{ (!empty($profileData->photo)) ? url('admin_dashboard/assets/img/profiles/'.$profileData->photo) : url('admin_dashboard/assets/img/profiles/avatar-03.jpg') }}">
-                          
+
                     </div>
                     <div class="user-text">
                         <h6>{{ Auth::user()->name }}</h6>

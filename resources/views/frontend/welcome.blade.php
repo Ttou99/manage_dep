@@ -5,6 +5,8 @@
 @stop
 
 @section('content')
+
+
 <!-- Start Landing -->
   <div class="landing">
     <div class="container">
@@ -35,14 +37,14 @@
   <!--@include('frontend.pages.testimonials') -->
   <!-- End Testimonials -->
   <!-- Start Team -->
-  <!-- @include('frontend.pages.team') --> 
+  <!-- @include('frontend.pages.team') -->
   <div class="spikes"></div>
   <!-- End Team -->
   <!-- Start Services -->
   @include('frontend.pages.services')
   <!-- End Services -->
   <!-- Start Skills -->
-  <!-- @include('frontend.pages.our-skills') --> 
+  <!-- @include('frontend.pages.our-skills') -->
   <!-- End Skills -->
   <!-- Start Work Steps -->
   {{-- @include('frontend.pages.work-steps') --}}

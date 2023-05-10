@@ -7,6 +7,7 @@ use App\Models\N_groupe;
 use App\Models\Section;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB ;
 
 class N_groupesTableSeeder extends Seeder
 {
@@ -15,12 +16,18 @@ class N_groupesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('n_groupes')->insert ([
 
-            $n_groupes = new N_groupe();
-            $n_groupes->name_n_groupe = 'A1';
-            $n_groupes->sous_groupe = 0;
-            $n_groupes->section_id = Section::all()->unique()->random()->id;
-            $n_groupes->save();
+            [
+                'name_n_groupe' => 'Av1',
+                'sous_groupe' => 1,
+                'section_id' => 2,
+            ]
+
+
+
+        ]);
+
     }
 
 }

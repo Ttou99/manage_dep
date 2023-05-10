@@ -31,6 +31,17 @@ class UserTableSeeder extends Seeder
                 'role' => 'admin',
                 'status' => 'active',
             ],
+            [
+                'name' => 'Teacher',
+                'email' => 'teacher@gmail.com',
+                'password' => Hash::make('1'),
+                'email_verified_at' => now(),
+                'remember_token' => Str::random(10),
+                'created_at' => Carbon::now(),
+                'phone' => '+213657324532',
+                'role' => 'user',
+                'status' => 'active',
+            ],
         ];
 
         foreach ($users as $user) {
