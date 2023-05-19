@@ -5,11 +5,10 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\N_groupeController;
 use App\Http\Controllers\Admin\RoomController;
-use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
-use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\TimetableController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +32,8 @@ Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login
 Route::post('/frontend/contact', [ContactController::class, 'store'])->name('frontend.contact');
 
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -48,6 +49,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth','role:user'])->prefix('teacher')->group(function () {
     Route::get('/dashboard', [TeacherUserController::class, 'TeacherDashboard'])->name('teacher.dashboard');
     Route::get('/logout', [TeacherUserController::class, 'logout'])->name('teacher.logout');
+    Route::get('/profile', [TeacherUserController::class, 'profile'])->name('teacher.profile');
 
 });
 
@@ -64,6 +66,10 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
     Route::resource('/groupes', N_groupeController::class);
     Route::get('/section/{id}', [N_groupeController::class, 'getgroupes']);
     Route::resource('/rooms', RoomController::class);
+
+    Route::get('/timetable', function () {
+            return view('admin.timetable');}) ;
+
 });
 
 

@@ -1,7 +1,7 @@
-@extends('admin.layouts.master')
+@extends('teacher.layouts.master')
 
 @section('title')
-    Dashboard
+    Dashboard Teacher
 @stop
 
 @section('content')
