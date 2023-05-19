@@ -38,7 +38,7 @@
                 </li>
 
                 <li>
-                    <a href="#"><i class="fas fa-calendar-day"></i> <span>Time Table </span></a>
+                    <a href="{{route('events.index')}}"><i class="fas fa-calendar-day"></i> <span>Time Table </span></a>
                 </li>
                 <li><a href="{{ url('/admin/contacts') }}"><i class="fa fa-address-card"></i> <span>Contacts</span></a></li>
                 <li><a href="{{ url('/admin/settings') }}"><i class="fa fa-cog"></i> <span>Settings</span></a></li>

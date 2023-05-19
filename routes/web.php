@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\N_groupeController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -64,6 +65,7 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
     Route::resource('/groupes', N_groupeController::class);
     Route::get('/section/{id}', [N_groupeController::class, 'getgroupes']);
     Route::resource('/rooms', RoomController::class);
+    Route::resource('/events', EventController::class);
 });
 
 

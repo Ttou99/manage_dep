@@ -9,4 +9,7 @@
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/fontawesome/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/css/style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+
+{{-- <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/fullcalendar/fullcalendar.min.css') }}"></link> --}}
 @yield('css')
