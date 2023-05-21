@@ -53,8 +53,10 @@ html, body {
 }
 
 .input-box > select {
+    padding: 7px 5px;
+    border-radius: 3px;
+    border: 1px solid #aaa;
     text-align: left;
-    width: 400px;
 }
 
 .input-box > input {
@@ -98,7 +100,7 @@ html, body {
 
 #add-btn:focus, #add-btn:active, #undo-btn:focus, #undo-btn:active {
     outline: none;
-    border: none;    
+    border: none;
 }
 
 #add-btn:hover, #undo-btn:hover {
@@ -147,9 +149,9 @@ html, body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-    } 
+    }
     to {
-        opacity: 1;    
+        opacity: 1;
     }
 }
 

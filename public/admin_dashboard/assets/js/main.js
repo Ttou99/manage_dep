@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Wednesday",
         "Thursday",
         "Friday"
-       
+
     ];
 
     const BACKGROUNDS = [
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const BG_OPACITY = 60;
 
     let timetable = document.getElementById("timetable");
-    
+
     for(let i=0; i<7; i++) {
         let div = document.createElement("div");
         div.classList.add("row");
@@ -75,8 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function addBtnHandler () {
         document.getElementById("error").style.display = 'none';
         let title = document.getElementById("course-title").value;
+
         let classroom = document.getElementById("classroom").value;
         let section = document.getElementById("section").value;
+        let group = document.getElementById("group").value;
         let days = $("#days").select2('val');
         let hours = $("#hours").select2('val');
 
@@ -94,14 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 for(let i=0; i<days.length; i++) {
                     let day = Number(days[i]);
                     let hour = Number(hours[j]);
-                    
+
                     if(cells[hour*8 + day].innerHTML !== '') {
                         flag = 1;
                         break;
                     }
-                    
+
                     arr.push(hour*8 + day);
-                    cells[hour*8 + day].innerHTML = `<strong>${title}</strong>${section}<br>${classroom}`;
+                    cells[hour*8 + day].innerHTML = `<strong>${title}</strong>${section}<br>${classroom}<br>${group}`;
                     cells[hour*8 + day].style.background = BACKGROUNDS[random] + BG_OPACITY.toString();
                 }
                 if(flag === 1)
@@ -121,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     bgColorIndex: random,
                     arr
                 });
-    
+
                 if(!checkLunch()) {
                     undo();
                     document.getElementById("error").innerHTML = 'No lunch break!';
@@ -133,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("course-title").value = '';
             document.getElementById("classroom").value = '';
             document.getElementById("section").value = '';
+            document.getElementById("group").value = '';
             $("#days").val('').trigger('change');
             $("#hours").val('').trigger('change');
         } else {
@@ -154,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cells[lastMove[i]].style.background = '';
             }
             BG_USED[history[history.length - 1].bgColorIndex] = 0;
-            
+
             history.pop();
         } else {
             document.getElementById("error").innerHTML = 'No history found!';

@@ -16,7 +16,7 @@ class RoomTabelSeeder extends Seeder
     {
         $rooms = new Room();
         $rooms->roomno = 3;
-        $rooms->roomtype_id = Roomtype::all()->unique()->random()->id;
+        $rooms->roomtype_id = 1;
         $rooms->save();
     }
 }

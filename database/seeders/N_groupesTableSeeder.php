@@ -22,7 +22,12 @@ class N_groupesTableSeeder extends Seeder
                 'name_n_groupe' => 'Av1',
                 'sous_groupe' => 1,
                 'section_id' => 2,
-            ]
+            ],
+            [
+            'name_n_groupe' => 'a5',
+            'sous_groupe' => 2,
+            'section_id' => 1,
+        ]
 
 
 

@@ -67,8 +67,7 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function () {
     Route::get('/section/{id}', [N_groupeController::class, 'getgroupes']);
     Route::resource('/rooms', RoomController::class);
 
-    Route::get('/timetable', function () {
-            return view('admin.timetable');}) ;
+    Route::resource('/timetable', TimetableController::class) ;
 
 });
 

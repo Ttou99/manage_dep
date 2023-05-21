@@ -18,8 +18,8 @@ class SubjectTabelSeeder extends Seeder
         $subjects = new Subject();
         $subjects->name_subject = 'ASD';
         $subjects->semestre = 0;
-        $subjects->academicyear_id = Academicyear::all()->unique()->random()->id;
-        $subjects->branch_id = Branch::all()->unique()->random()->id;
+        $subjects->academicyear_id = 1;
+        $subjects->branch_id = 1;
         $subjects->save();
     }
 }
