@@ -12,7 +12,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::all();
-        return view('admin.rooms.index',compact('rooms'));
+        return view('admin.rooms.index', compact('rooms'));
 
     }
 
@@ -34,23 +34,21 @@ class RoomController extends Controller
         try {
             $rooms = new Room();
             $rooms->roomtype_id = $request->roomtype_id;
-            $rooms->roomno = $request->roomno;
+            $rooms->room_number = $request->room_number;
             $rooms->save();
 
             return redirect()->route('rooms.index');
 
 
 
-          }
-
-catch (\Exception $e){
-return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-}
-}
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
 
     /**
-     * Display the specified resource.
-     */
+         * Display the specified resource.
+         */
     public function show(Room $room)
     {
         //
@@ -63,24 +61,22 @@ return redirect()->back()->withErrors(['error' => $e->getMessage()]);
     {
         $roomtypes = Roomtype::all();
         $rooms =  Room::findOrFail($id);
-        return view('admin.rooms.edit', compact('rooms','roomtypes'));
+        return view('admin.rooms.edit', compact('rooms', 'roomtypes'));
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, )
+    public function update(Request $request)
     {
-        try{
+        try {
             $rooms = Room::findorfail($request->id);
-            $rooms->roomno = $request->roomno;
+            $rooms->room_number = $request->room_number;
             $rooms->roomtype_id = $request->roomtype_id;
             $rooms->save();
             return redirect()->route('rooms.index');
-        }
-
-        catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
 

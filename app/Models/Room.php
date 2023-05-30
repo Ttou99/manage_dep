@@ -13,4 +13,9 @@ class Room extends Model
     {
         return $this->belongsTo(Roomtype::class);
     }
+
+    public function getRoomNameAttribute()
+    {
+        return $this->roomtype()->first()->name . ' ' . $this->room_number;
+    }
 }

@@ -14,12 +14,22 @@ class TimetableController extends Controller
     public function index()
     {
 
+        $weekDays = [
+            '1' => 'Monday',
+            '2' => 'Tuesday',
+            '3' => 'Wednesday',
+            '4' => 'Thursday',
+            '5' => 'Friday',
+            '6' => 'Saturday',
+            '7' => 'Sunday',
+        ];
+    
         $data = [
             'teahcers' => Teacher::all(),
             'rooms' => Room::all(),
             'subjects' => Subject::all(),
             'groups' => N_groupe::all(),
         ];
-        return view('admin.timetable.index', $data);
+        return view('admin.timetable.index', compact('data', 'weekDays'));
     }
 }

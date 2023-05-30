@@ -15,7 +15,7 @@ class RoomTabelSeeder extends Seeder
     public function run(): void
     {
         $rooms = new Room();
-        $rooms->roomno = 3;
+        $rooms->room_number = 3;
         $rooms->roomtype_id = 1;
         $rooms->save();
     }
