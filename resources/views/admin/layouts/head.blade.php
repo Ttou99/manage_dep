@@ -8,5 +8,6 @@
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/icons/flags/flags.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/fontawesome/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/plugins/select2/css/select2.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('admin_dashboard/assets/css/style.css') }}">
 @yield('css')

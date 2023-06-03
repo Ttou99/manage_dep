@@ -21,8 +21,9 @@ class Lesson extends Model
     ];
 
     protected $fillable = [
-        'start_date',
-        'end_date',
+        'weekday',
+        'start_time',
+        'end_time',
         'comments',
         'user_id',
         'teacher_id',

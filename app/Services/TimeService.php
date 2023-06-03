@@ -19,4 +19,16 @@ class TimeService
         } while ($time->format("H:i:s") !== $to);
         return $timeRange;
     }
+
+    public function getTimes($from, $to)
+    {
+        $timeRange = $this->generateTimeRange($from, $to);
+
+        $timeText = [];
+        foreach ($timeRange as $time) {
+            $timeText[] = $time['start'] . ' - ' . $time['end'];
+        }
+
+        return $timeText;
+    }
 }
