@@ -212,4 +212,8 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'calendar' => [
+        'start_time'    => '08:00:00',
+        'end_time'      => '17:00:00',
+    ],
 ];

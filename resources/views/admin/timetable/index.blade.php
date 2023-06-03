@@ -34,34 +34,37 @@
                     </div>
 
                     <div class="col-md-12">
-                        <table class="table table-bordered">
-                            <thead>
-                                <th width="125">Time</th>
-                                @foreach ($weekDays as $day)
-                                    <th>{{ $day }}</th>
-                                @endforeach
-                            </thead>
-                            <tbody>
-                                @foreach ($calendarData as $time => $days)
-                                    <tr>
-                                        <td>
-                                            {{ $time }}
-                                        </td>
-                                        @foreach ($days as $value)
-                                            @if (is_array($value))
-                                                <td rowspan="{{ $value['rowspan'] }}" class="align-middle text-center"
-                                                    style="background-color:#f0f0f0">
-                                                    {{ $value['class_name'] }}<br>
-                                                    Teacher: {{ $value['teacher_name'] }}
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th width="125">Time</th>
+                                    @foreach ($weekDays as $day)
+                                        <th>{{ $day }}</th>
+                                    @endforeach
+                                </thead>
+                                <tbody>
+                                    @foreach ($calendarData as $time => $days)
+                                        <tr>
+                                            <td>
+                                                {{ $time }}
+                                            </td>
+                                            @foreach ($days as $day => $lessons)
+                                                <td>
+                                                    @foreach ($lessons as $lesson)
+                                                        <div class="align-middle text-center mb-2"
+                                                            style="background-color:#f0f0f0; border-width: 2px;">
+                                                            {{ $lesson['group_and_room'] }} /
+                                                            {{ $lesson['class_name'] }}<br>
+                                                            Teacher: {{ $lesson['teacher_name'] }}
+                                                        </div>
+                                                    @endforeach
                                                 </td>
-                                            @elseif ($value === 1)
-                                                <td></td>
-                                            @endif
-                                        @endforeach
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                            @endforeach
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
